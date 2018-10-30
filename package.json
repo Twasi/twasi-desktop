@@ -20,8 +20,13 @@
     "electron-build": "npm run build && npm run electron"
   },
   "devDependencies": {
+    "@material-ui/core": "^3.3.2",
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
-    "electron": "^2.0.9"
+    "electron": "^2.0.9",
+    "material-ui": "^0.20.2",
+    "react-redux": "^5.1.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1"
   }
 }

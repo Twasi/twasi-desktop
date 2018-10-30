@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Background from './components/background/Background.js';
+import Sidebar from './components/sidebar/Sidebar.js'
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
         <p className="App-intro">
           Hello World :D !!
         </p>
-        <Background></Background>
+        <Background />
+        <Sidebar />
       </div>
     );
   }
