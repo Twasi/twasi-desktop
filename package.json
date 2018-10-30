@@ -15,12 +15,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "electron-dev": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
     "dev": "concurrently --kill-others \"npm start\" \"npm run electron-dev\"",
     "electron-build": "npm run build && npm run electron"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
     "electron": "^2.0.9"
   }
 }
