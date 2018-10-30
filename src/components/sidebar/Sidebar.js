@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import find from 'lodash/fp/find';
 import { throttle } from 'lodash';
@@ -96,7 +95,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { location, intl } = this.props;
+    const { location } = this.props;
 
     let selectedKey = 'fakechat' //find(item => item.path === location.pathname, this.items);
     if (typeof selectedKey === 'undefined') {
@@ -122,43 +121,41 @@ class Sidebar extends Component {
 
     return (
       <div>
-        <Hidden mdDown>
-          <Paper style={getMenuStyle()} className="sidebar">
-            <div style={getHeaderMenuItem()}>
-              "asdasd"
-            </div>
-            <MenuList
-              className="Sidebar"
+        <Paper style={getMenuStyle()} className="sidebar">
+          <div style={getHeaderMenuItem()}>
+            MENUTITLE
+          </div>
+          <MenuList
+            className="Sidebar"
+          >
+            {renderItems()}
+          </MenuList>
+        </Paper>
+        <Paper style={getMenuStyle()} className="sidebar sidebarSecondary">
+          <MenuList
+            className="Sidebar"
+          >
+            <MenuItem
+              style={{ fontSize: 13 }}
+              innerDivStyle={{ padding: '0px 16px 0px 52px' }}
+              onClick={() => window.open('https://docs.twasi.net', '_blank')}
             >
-              {renderItems()}
-            </MenuList>
-          </Paper>
-          <Paper style={getMenuStyle()} className="sidebar sidebarSecondary">
-            <MenuList
-              className="Sidebar"
+              <i className="material-icons" style={{ marginRight: '15px' }}>language</i>
+              Docs
+            </MenuItem>
+            <MenuItem
+              style={{ fontSize: 13 }}
+              innerDivStyle={{ padding: '0px 16px 0px 52px' }}
+              onClick={() => {
+                localStorage.clear();
+                window.location = 'https://twasi.net';
+              }}
             >
-              <MenuItem
-                style={{ fontSize: 13 }}
-                innerDivStyle={{ padding: '0px 16px 0px 52px' }}
-                onClick={() => window.open('https://docs.twasi.net', '_blank')}
-              >
-                <i className="material-icons" style={{ marginRight: '15px' }}>language</i>
-                Docs
-              </MenuItem>
-              <MenuItem
-                style={{ fontSize: 13 }}
-                innerDivStyle={{ padding: '0px 16px 0px 52px' }}
-                onClick={() => {
-                  localStorage.clear();
-                  window.location = 'https://twasi.net';
-                }}
-              >
-                <i className="material-icons" style={{ marginRight: '15px' }}>keyboard_return</i>
-                Logout
-              </MenuItem>
-            </MenuList>
-          </Paper>
-        </Hidden>
+              <i className="material-icons" style={{ marginRight: '15px' }}>keyboard_return</i>
+              Logout
+            </MenuItem>
+          </MenuList>
+        </Paper>
       </div>
     );
   }
@@ -171,12 +168,7 @@ Sidebar.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,
-  intl: "intlShape",
   userName: PropTypes.string
 };
 
-const mapStateToProps = state => ({
-  userName: "breadly"
-});
-
-export default Sidebar;
+export default withRouter(Sidebar);
