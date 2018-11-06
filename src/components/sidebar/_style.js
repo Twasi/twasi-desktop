@@ -1,6 +1,6 @@
 export const getMenuStyle = () => ({
     display: 'inline-block',
-    margin: '23px 32px 16px 0',
+    margin: '0 32px 16px 0',
     boxShadow: 'none'
 });
   
@@ -26,5 +26,5 @@ export const getHeaderMenuItem = () => ({
 });
 
 export const getActiveMenuItem = () => ({
-    olor: '#00aeae'
+    color: '#00aeae'
 });
