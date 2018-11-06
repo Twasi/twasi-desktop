@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.4.0",
+    "jwt-decode": "^2.2.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
@@ -22,9 +24,9 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
+    "electron": "^3.0.6",
     "material-ui": "^0.20.2",
     "react-redux": "^5.1.0",
-    "react-router-dom": "^4.3.1",
-    "electron": "^3.0.6"
+    "react-router-dom": "^4.3.1"
   }
 }
