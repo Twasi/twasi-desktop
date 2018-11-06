@@ -79,7 +79,6 @@ app.on('ready', () => {
 
         if (newUrl.startsWith(beginning)) {
             const jwt = newUrl.replace(beginning, '');
-            console.log(jwt);
             createWindow();
 
             mainWindow.webContents.on('did-finish-load', function() {
