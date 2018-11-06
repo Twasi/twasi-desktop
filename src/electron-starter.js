@@ -63,8 +63,8 @@ app.on('activate', function () {
 // Auth
 app.on('ready', () => {
     const authWindow = new BrowserWindow({
-        width: 400,
-        height: 450,
+        width: 800,
+        height: 600,
         alwaysOnTop: true,
         autoHideMenuBar: true,
         webPreferences: {
