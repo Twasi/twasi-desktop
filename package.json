@@ -12,7 +12,7 @@
   "main": "src/electron-starter.js",
   "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
