@@ -10,6 +10,7 @@ if (!window.signin) {
 class AuthManager {
     constructor() {
         this.isAuthenticated = false;
+        this.eventHandlers = [];
     }
 
     isAuthenticated() {
@@ -19,6 +20,12 @@ class AuthManager {
     authenticate(jwt) {
         this.jwt = jwt;
         this.userByJwt = jwtdecode(jwt);
+
+        this.eventHandlers.forEach(handler => handler(jwt));
+    }
+
+    registerOnAuthenticate(eventHandler) {
+        this.eventHandlers.push(eventHandler);
     }
 }
 
