@@ -4,7 +4,6 @@ if (!window.signin) {
     console.log('Waiting for JWT...');
     window.signin = jwt => {
         console.log('JWT: ' + jwt);
-        manager.authenticate(jwt);
     }
 }
 
@@ -20,7 +19,6 @@ class AuthManager {
     authenticate(jwt) {
         this.jwt = jwt;
         this.userByJwt = jwtdecode(jwt);
-        console.log(this.userByJwt);
     }
 }
 
