@@ -6,10 +6,8 @@ import { throttle } from 'lodash';
 import Paper from '@material-ui/core/Paper';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
-import Hidden from '@material-ui/core/Hidden';
 
-
-import { getMenuStyle, getHeaderMenuItem, getActiveMenuItem } from './_style';
+import { getMenuStyle, getHeaderMenuItem } from './_style';
 
 import './_style.css';
 
@@ -123,7 +121,7 @@ class Sidebar extends Component {
       <div>
         <Paper style={getMenuStyle()} className="sidebar">
           <div style={getHeaderMenuItem()}>
-            MENUTITLE
+            Navbar
           </div>
           <MenuList
             className="Sidebar"
