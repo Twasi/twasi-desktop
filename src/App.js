@@ -5,12 +5,12 @@ import APIConnector from './api/APIConnector';
 import Background from './components/background/Background';
 import Sidebar from './components/sidebar/Sidebar';
 import Overview from './sites/Overview';
-import Status from './sites/Status';
 import Logout from './sites/Logout';
 import Error404 from './sites/Error404';
 import CommandExport from './sites/CommandExport';
 
 import './App.css';
+import Songrequests from "./sites/Songrequests";
 
 APIConnector.ready(() => {
     APIConnector.getUserInfo().then(response => {
@@ -28,10 +28,9 @@ class App extends Component {
                     <div className="App-content">
                         <Switch>
                             <Route exact path='/' component={Overview}/>
-                            <Route exact path='/status' component={Status}/>
                             <Route exact path='/logout' component={Logout}/>
                             <Route exact path='/export' component={CommandExport}/>
-
+                            <Route exact path='/songrequest' component={Songrequests}/>
                             <Route path='/' component={Error404}/>
                         </Switch>
                     </div>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-class Overview extends Component {
+class Logout extends Component {
     componentDidMount() {
         //console.log(remote);
     }
 
-class Logout extends Component {
     render() {
         return (
             <p>YOU'RE LOGGING YOURSELF OUT</p>
