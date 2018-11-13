@@ -31,6 +31,10 @@ class APIConnector {
     }
 
     doPanelRequest(query) {
+        if (!this.isReady) {
+            console.error("Tried to do panel request but APIConnector is not ready yet.");
+            return;
+        }
         return getUserGraph(query, this.jwt);
     }
 
