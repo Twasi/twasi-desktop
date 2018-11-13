@@ -28,9 +28,9 @@ class App extends Component {
                     <div className="App-content">
                         <Switch>
                             <Route exact path='/' component={Overview}/>
-                            <Route path='/status' component={Status}/>
-                            <Route path='/logout' component={Logout}/>
-                            <Route path='/export' component={CommandExport}/>
+                            <Route exact path='/status' component={Status}/>
+                            <Route exact path='/logout' component={Logout}/>
+                            <Route exact path='/export' component={CommandExport}/>
 
                             <Route path='/' component={Error404}/>
                         </Switch>

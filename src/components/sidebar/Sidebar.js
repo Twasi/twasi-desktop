@@ -26,7 +26,7 @@ class Sidebar extends Component {
         key: 'commandexport',
         path: '/export',
         icon: 'code',
-        name: 'CommandExport'
+        name: 'Command Export'
       },
       {
         key: 'songrequests',
