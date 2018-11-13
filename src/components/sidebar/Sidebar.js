@@ -23,28 +23,10 @@ class Sidebar extends Component {
         name: 'Overview'
       },
       {
-        key: 'status',
-        path: '/status',
-        icon: 'info',
-        name: 'Status'
-      },
-      {
-        key: 'profile',
-        path: '/profile',
-        icon: 'account_box',
-        name: 'Profile'
-      },
-      {
-        key: 'plugins',
-        path: '/plugins',
-        icon: 'store',
-        name: 'Plugins'
-      },
-      {
-        key: 'commands',
-        path: '/commands',
+        key: 'commandexport',
+        path: '/export',
         icon: 'code',
-        name: 'Commands'
+        name: 'CommandExport'
       },
       {
         key: 'songrequests',
@@ -53,14 +35,8 @@ class Sidebar extends Component {
         name: 'Songrequests'
       },
       {
-        key: 'fakechat',
-        path: '/fakechat',
-        icon: 'vertical_split',
-        name: 'Fakechat'
-      },
-      {
-        key: 'docs',
-        path: '/docs',
+        key: 'logout',
+        path: '/logout',
         icon: 'keyboard_return',
         name: 'Logout'
       }
@@ -81,19 +57,18 @@ class Sidebar extends Component {
     const { history } = this.props;
 
     const { path } = find(newItem => newItem.key === value, this.items);
-
     history.push(path);
     this.setState({});
   }
 
   render() {
-    let selectedKey = 'fakechat' //find(item => item.path === location.pathname, this.items);
+    let { location } = this.props
+    let selectedKey = find(item => item.path === location.pathname, this.items);
     if (typeof selectedKey === 'undefined') {
       selectedKey = this.items[0].key;
     } else {
       selectedKey = selectedKey.key;
     }
-
     const renderItems = () =>
       this.items.map(item => (
         <MenuItem
@@ -112,7 +87,7 @@ class Sidebar extends Component {
     return (
         <Paper style={getMenuStyle()} className="sidebar">
           <div style={getHeaderMenuItem()}>
-            Navbar
+            Navigation
           </div>
           <MenuList
             className="Sidebar"

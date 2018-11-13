@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+class Overview extends Component {
+    componentDidMount() {
+        //console.log(remote);
+    }
 
 class Logout extends Component {
     render() {
