@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class Overview extends Component {
+class Logout extends Component {
     componentDidMount() {
-        //const remote = require('electron').remote;
         //console.log(remote);
     }
 
     render() {
         return (
-            <p>Logout/</p>
+            <p>YOU'RE LOGGING YOURSELF OUT</p>
         );
     }
 }
 
-export default Overview;
+export default Logout;
+
