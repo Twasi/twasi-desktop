@@ -1,39 +1,42 @@
-import React, { Component } from 'react';
-import './App.css';
-import Background from './components/background/Background.js';
-import Sidebar from './components/sidebar/Sidebar.js';
-import Overview from './sites/Overview.js';
-import Status from './sites/Status.js';
-import Error404 from './sites/Error404.js';
+import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import APIConnector from './api/APIConnector';
+import Background from './components/background/Background';
+import Sidebar from './components/sidebar/Sidebar';
+import Overview from './sites/Overview';
+import Status from './sites/Status';
+import Logout from './sites/Logout';
+import Error404 from './sites/Error404';
+
+import './App.css';
 
 APIConnector.ready(() => {
-  APIConnector.getUserInfo().then(response => {
-    console.log(response.user.twitchAccount.email);
-  })
+    APIConnector.getUserInfo().then(response => {
+        console.log(response.user.twitchAccount.email);
+    })
 });
 
 class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div> 
-          <Background />
-          <Sidebar />
-          <div className="App-content">
-            <Switch>
-              <Route exact path='/' component={ Overview } />
-              <Route path='/status' component={ Status } />
-              <Route path='/' component={ Error404 } />
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Background/>
+                    <Sidebar/>
+                    <div className="App-content">
+                        <Switch>
+                            <Route exact path='/' component={Overview}/>
+                            <Route path='/status' component={Status}/>
+                            <Route path='/logout' component={Logout}/>
 
-            </Switch>
-          </div>  
-        </div>  
-      </BrowserRouter>
-    );
-  }
+                            <Route path='/' component={Error404}/>
+                        </Switch>
+                    </div>
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;
