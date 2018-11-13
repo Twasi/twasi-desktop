@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Overview extends Component {
     componentDidMount() {
-        //const remote = require('electron').remote;
-        //console.log(remote);
+        this.remote = window.require('electron').remote;
+        console.log(remote);
     }
 
     render() {
