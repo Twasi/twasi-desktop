@@ -23,40 +23,16 @@ class Sidebar extends Component {
         name: 'Overview'
       },
       {
-        key: 'status',
-        path: '/status',
-        icon: 'info',
-        name: 'Status'
-      },
-      {
-        key: 'profile',
-        path: '/profile',
-        icon: 'account_box',
-        name: 'Profile'
-      },
-      {
-        key: 'plugins',
-        path: '/plugins',
-        icon: 'store',
-        name: 'Plugins'
-      },
-      {
-        key: 'commands',
-        path: '/commands',
+        key: 'commandexport',
+        path: '/export',
         icon: 'code',
-        name: 'Commands'
+        name: 'CommandExport'
       },
       {
         key: 'songrequests',
         path: '/songrequests',
         icon: 'library_music',
         name: 'Songrequests'
-      },
-      {
-        key: 'fakechat',
-        path: '/fakechat',
-        icon: 'vertical_split',
-        name: 'Fakechat'
       },
       {
         key: 'docs',
