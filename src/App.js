@@ -8,6 +8,7 @@ import Overview from './sites/Overview';
 import Status from './sites/Status';
 import Logout from './sites/Logout';
 import Error404 from './sites/Error404';
+import CommandExport from './sites/CommandExport';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ class App extends Component {
                             <Route exact path='/' component={Overview}/>
                             <Route path='/status' component={Status}/>
                             <Route path='/logout' component={Logout}/>
+                            <Route path='/export' component={CommandExport}/>
 
                             <Route path='/' component={Error404}/>
                         </Switch>
