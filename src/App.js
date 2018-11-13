@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-import Background from './components/background/Background.js';
-import Sidebar from './components/sidebar/Sidebar.js';
-import Overview from './sites/Overview.js';
-import Status from './sites/Status.js';
-import Profile from './sites/Profile.js';
-import PluginStore from './sites/PluginStore.js';
-import Commands from './sites/Commands.js';
-import Songrequests from './sites/Songrequests.js';
-import Fakechat from './sites/Fakechat.js';
-import Logout from './sites/Logout.js';
-import Error404 from './sites/Error404.js';
+import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import APIConnector from './api/APIConnector';
+import Background from './components/background/Background';
+import Sidebar from './components/sidebar/Sidebar';
+import Overview from './sites/Overview';
+import Status from './sites/Status';
+import Logout from './sites/Logout';
+import Error404 from './sites/Error404';
+import CommandExport from './sites/CommandExport';
+
+import './App.css';
 
 APIConnector.ready(() => {
     APIConnector.getUserInfo().then(response => {
@@ -26,19 +23,16 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Background />
-                    <Sidebar />
+                    <Background/>
+                    <Sidebar/>
                     <div className="App-content">
                         <Switch>
-                            <Route exact path='/overview' component={ Overview } />
-                            <Route path='/status' component={ Status } />
-                            <Route path='/profile' component={ Profile } />
-                            <Route path='/plugins' component={ PluginStore } />
-                            <Route path='/commands' component={ Commands } />
-                            <Route path='/songrequests' component={ Songrequests } />
-                            <Route path='/fakechat' component={ Fakechat } />
-                            <Route path='/docs' component={ Logout } />
-                            <Route path='/' component={ Error404 } />
+                            <Route exact path='/' component={Overview}/>
+                            <Route exact path='/status' component={Status}/>
+                            <Route exact path='/logout' component={Logout}/>
+                            <Route exact path='/export' component={CommandExport}/>
+
+                            <Route path='/' component={Error404}/>
                         </Switch>
                     </div>
                 </div>
