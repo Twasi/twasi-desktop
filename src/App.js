@@ -21,28 +21,29 @@ APIConnector.ready(() => {
 });
 
 class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div> 
-          <Background />
-          <Sidebar />
-          <Switch>
-            <Route exact path='/overview' component={ Overview } />
-            <Route path='/status' component={ Status } />
-            <Route path='/profile' component={ Profile } />
-            <Route path='/plugins' component={ PluginStore } />
-            <Route path='/commands' component={ Commands } />
-            <Route path='/songrequests' component={ Songrequests } />
-            <Route path='/fakechat' component={ Fakechat } />
-            <Route path='/docs' component={ Logout } />
-            <Route path='/' component={ Error404 } />
-
-          </Switch>  
-        </div>  
-      </BrowserRouter>
-    );
-  }
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Background />
+                    <Sidebar />
+                    <div className="App-content">
+                        <Switch>
+                            <Route exact path='/overview' component={ Overview } />
+                            <Route path='/status' component={ Status } />
+                            <Route path='/profile' component={ Profile } />
+                            <Route path='/plugins' component={ PluginStore } />
+                            <Route path='/commands' component={ Commands } />
+                            <Route path='/songrequests' component={ Songrequests } />
+                            <Route path='/fakechat' component={ Fakechat } />
+                            <Route path='/docs' component={ Logout } />
+                            <Route path='/' component={ Error404 } />
+                        </Switch>
+                    </div>
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

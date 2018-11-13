@@ -110,7 +110,6 @@ class Sidebar extends Component {
       ));
 
     return (
-      <div>
         <Paper style={getMenuStyle()} className="sidebar">
           <div style={getHeaderMenuItem()}>
             Navbar
@@ -121,7 +120,6 @@ class Sidebar extends Component {
             {renderItems()}
           </MenuList>
         </Paper>
-      </div>
     );
   }
 }

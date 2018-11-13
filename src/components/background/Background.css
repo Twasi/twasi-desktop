@@ -1,8 +1,14 @@
 .background {
-    background-color: #777;   
+    background-color: #151e21;   
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     z-index: -1;
+}
+
+.header {
+    background-color: #131921;
+    border-top: #00aeae 5px solid;
+    height: 120px;
 }
