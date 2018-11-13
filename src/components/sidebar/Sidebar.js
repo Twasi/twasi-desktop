@@ -57,19 +57,18 @@ class Sidebar extends Component {
     const { history } = this.props;
 
     const { path } = find(newItem => newItem.key === value, this.items);
-
     history.push(path);
     this.setState({});
   }
 
   render() {
-    let selectedKey = 'fakechat' //find(item => item.path === location.pathname, this.items);
+    let { location } = this.props
+    let selectedKey = find(item => item.path === location.pathname, this.items);
     if (typeof selectedKey === 'undefined') {
       selectedKey = this.items[0].key;
     } else {
       selectedKey = selectedKey.key;
     }
-
     const renderItems = () =>
       this.items.map(item => (
         <MenuItem
@@ -88,7 +87,7 @@ class Sidebar extends Component {
     return (
         <Paper style={getMenuStyle()} className="sidebar">
           <div style={getHeaderMenuItem()}>
-            Navbar
+            Navigation
           </div>
           <MenuList
             className="Sidebar"
