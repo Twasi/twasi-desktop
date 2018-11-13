@@ -20,55 +20,49 @@ class Sidebar extends Component {
         key: 'overview',
         path: '/',
         icon: 'home',
-        name: 'sidebar.overview'
+        name: 'Overview'
       },
       {
         key: 'status',
         path: '/status',
         icon: 'info',
-        name: 'sidebar.status'
+        name: 'Status'
       },
       {
         key: 'profile',
         path: '/profile',
         icon: 'account_box',
-        name: 'sidebar.profile'
+        name: 'Profile'
       },
       {
         key: 'plugins',
         path: '/plugins',
         icon: 'store',
-        name: 'sidebar.plugins'
+        name: 'Plugins'
       },
       {
         key: 'commands',
         path: '/commands',
         icon: 'code',
-        name: 'sidebar.commands'
+        name: 'Commands'
       },
       {
         key: 'songrequests',
         path: '/songrequests',
         icon: 'library_music',
-        name: 'sidebar.songrequests'
-      },
-      {
-        key: 'giveaways',
-        path: '/giveaways',
-        icon: 'redeem',
-        name: 'sidebar.giveaways'
-      },
-      {
-        key: 'urlshortener',
-        path: '/urlshortener',
-        icon: 'link',
-        name: 'sidebar.urlshortener'
+        name: 'Songrequests'
       },
       {
         key: 'fakechat',
         path: '/fakechat',
         icon: 'vertical_split',
-        name: 'sidebar.fakechat'
+        name: 'Fakechat'
+      },
+      {
+        key: 'docs',
+        path: '/docs',
+        icon: 'keyboard_return',
+        name: 'Logout'
       }
     ];
 
@@ -93,8 +87,6 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { location } = this.props;
-
     let selectedKey = 'fakechat' //find(item => item.path === location.pathname, this.items);
     if (typeof selectedKey === 'undefined') {
       selectedKey = this.items[0].key;
@@ -127,31 +119,6 @@ class Sidebar extends Component {
             className="Sidebar"
           >
             {renderItems()}
-          </MenuList>
-        </Paper>
-        <Paper style={getMenuStyle()} className="sidebar sidebarSecondary">
-          <MenuList
-            className="Sidebar"
-          >
-            <MenuItem
-              style={{ fontSize: 13 }}
-              innerDivStyle={{ padding: '0px 16px 0px 52px' }}
-              onClick={() => window.open('https://docs.twasi.net', '_blank')}
-            >
-              <i className="material-icons" style={{ marginRight: '15px' }}>language</i>
-              Docs
-            </MenuItem>
-            <MenuItem
-              style={{ fontSize: 13 }}
-              innerDivStyle={{ padding: '0px 16px 0px 52px' }}
-              onClick={() => {
-                localStorage.clear();
-                window.location = 'https://twasi.net';
-              }}
-            >
-              <i className="material-icons" style={{ marginRight: '15px' }}>keyboard_return</i>
-              Logout
-            </MenuItem>
           </MenuList>
         </Paper>
       </div>
