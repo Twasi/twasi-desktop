@@ -18,7 +18,7 @@ class Sidebar extends Component {
     this.items = [
       {
         key: 'overview',
-        path: '/',
+        path: '/overview',
         icon: 'home',
         name: 'Overview'
       },
