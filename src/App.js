@@ -22,12 +22,14 @@ class App extends Component {
         <div> 
           <Background />
           <Sidebar />
-          <Switch>
-            <Route exact path='/' component={ Overview } />
-            <Route path='/status' component={ Status } />
-            <Route path='/' component={ Error404 } />
+          <div className="App-content">
+            <Switch>
+              <Route exact path='/' component={ Overview } />
+              <Route path='/status' component={ Status } />
+              <Route path='/' component={ Error404 } />
 
-          </Switch>  
+            </Switch>
+          </div>  
         </div>  
       </BrowserRouter>
     );

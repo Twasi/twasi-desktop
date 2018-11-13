@@ -4,7 +4,9 @@ import './Background.css';
 class Background extends Component {
   render() {
     return (
-      <div className="background" />
+      <div className="background">
+        <div className="header" />
+      </div>
     );
   }
 }
