@@ -14,10 +14,11 @@ import Error404 from './sites/Error404.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import APIConnector from './api/APIConnector';
+
 APIConnector.ready(() => {
-  APIConnector.getUserInfo().then(response => {
-    console.log(response.user.twitchAccount.email);
-  })
+    APIConnector.getUserInfo().then(response => {
+        console.log(response.user.twitchAccount.email);
+    })
 });
 
 class App extends Component {
