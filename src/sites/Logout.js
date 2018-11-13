@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Overview extends Component {
+class Logout extends Component {
     componentDidMount() {
         this.remote = window.require('electron').remote;
         console.log(remote);
@@ -13,4 +13,5 @@ class Overview extends Component {
     }
 }
 
-export default Overview;
+export default Logout;
+
