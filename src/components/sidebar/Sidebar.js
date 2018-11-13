@@ -35,8 +35,8 @@ class Sidebar extends Component {
         name: 'Songrequests'
       },
       {
-        key: 'docs',
-        path: '/docs',
+        key: 'logout',
+        path: '/logout',
         icon: 'keyboard_return',
         name: 'Logout'
       }
