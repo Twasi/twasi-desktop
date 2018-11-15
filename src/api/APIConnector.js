@@ -11,7 +11,7 @@ const getUserGraph = (query, jwt, target) => {
     }
     return new Promise(resolve => {
         getGraph(`query{${target}(token:"${jwt}"){${query}}}`).then(data => {
-            resolve(data.data.panel);
+            resolve(data.data[target]);
         });
     });
 };
