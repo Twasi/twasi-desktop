@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import APIConnector from '../api/APIConnector';
-
 class CommandExport extends Component {
 
     constructor(props) {
@@ -10,9 +9,9 @@ class CommandExport extends Component {
 
     exportCommands() {
         APIConnector.ready(() => {
-            APIConnector.doPanelRequest("plugins{isInstalled, name, author, version, description, commands, permissions}")
+            APIConnector.doPanelRequest("commands{id, name, content}", "commands")
                 .then(result => {console.log(result)})
-        })
+        });
     }
 
     render() {
