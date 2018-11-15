@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import APIConnector from './api/APIConnector';
 import Background from './components/background/Background';
 import Sidebar from './components/sidebar/Sidebar';
 import Overview from './sites/Overview';
@@ -11,12 +10,6 @@ import CommandExport from './sites/CommandExport';
 
 import './App.css';
 import Songrequests from "./sites/Songrequests";
-
-APIConnector.ready(() => {
-    APIConnector.getUserInfo().then(response => {
-        console.log(response.user.twitchAccount.email);
-    })
-});
 
 class App extends Component {
     render() {
