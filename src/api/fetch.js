@@ -7,7 +7,8 @@ export default async (url, method, payload) => {
     const options = {
         method,
         headers: requestHeaders(),
-        body: method !== 'GET' ? payload : undefined
+        body: method !== 'GET' ? payload : undefined,
+        mode: 'no-cors'
     };
 
     const response = await fetch(url, options);
