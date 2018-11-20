@@ -14,11 +14,7 @@ class SongSync extends Component {
 
     toggleButton(e, checked) {
 
-        if (checked) {
-            this.setState({isDisabled: !checked});
-        } else {
-            this.setState({isDisabled: !checked})
-        }
+        this.setState({isDisabled: !checked});
 
     }
 
