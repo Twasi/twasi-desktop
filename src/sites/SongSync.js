@@ -5,7 +5,7 @@ class SongSync extends Component {
     render() {
         return (
             <div>
-                <p>HELLO IM THE SongSnyc XD</p>
+                <p>Welcome to SongSync</p>
                 <Switch />
             </div>
         );
