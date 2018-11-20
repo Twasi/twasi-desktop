@@ -24,6 +24,8 @@
 
 .App-content {
   color: white;
+  margin: auto;
+  width: calc(70% - 270px);
 }
 
 @keyframes App-logo-spin {

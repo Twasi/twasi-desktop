@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Background from './components/background/Background';
+import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import Overview from './sites/Overview';
 import Logout from './sites/Logout';
@@ -17,7 +17,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Background/>
+                    <Header/>
                     <Sidebar/>
                     <div className="App-content">
                         <Switch>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Background.css';
+import './Header.css';
 
-class Background extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="background">
@@ -11,4 +11,4 @@ class Background extends Component {
   }
 }
 
-export default Background;
+export default Header;
