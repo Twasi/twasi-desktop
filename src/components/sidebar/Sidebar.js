@@ -35,6 +35,12 @@ class Sidebar extends Component {
         name: 'Songrequests'
       },
       {
+       key: 'songsync',
+       path: '/songsync',
+       icon: 'library_music',
+       name: 'SongSync'
+      },
+      {
         key: 'logout',
         path: '/logout',
         icon: 'keyboard_return',
