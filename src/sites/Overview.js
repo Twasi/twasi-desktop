@@ -5,7 +5,7 @@ class Overview extends Component {
     render() {
         return (
             <div>
-                <p>HELLO IM THE OVERVIEW</p>
+                <p className="siteTitle">Overview</p>
                 <div className="tiles">
                     <InfoTiles />
                 </div>
