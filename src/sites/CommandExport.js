@@ -47,7 +47,7 @@ class CommandExport extends Component {
     render() {
         return (
             <div>
-                <p>Hey, here is the current song export. Have Fun!</p>
+                <p>Hey, here you're able to export your custom commands. Have fun!</p>
                 <button className="exportButton" onClick={this.exportCommands}>Export</button>
             </div>
         );

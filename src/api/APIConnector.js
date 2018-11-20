@@ -59,3 +59,5 @@ const connector = new APIConnector();
 AuthManager.registerOnAuthenticate(jwt => connector.setup(jwt));
 
 export default connector;
+
+export { APIConnector };

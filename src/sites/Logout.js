@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class Logout extends Component {
     componentDidMount() {
-        //console.log(remote);
+        this.remote = window.require('electron').remote;
+        console.log(this.remote);
     }
 
     render() {
         return (
-            <p>YOU'RE LOGGING YOURSELF OUT</p>
+            <p>Logout/</p>
         );
     }
 }

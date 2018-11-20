@@ -29,12 +29,6 @@ class Sidebar extends Component {
         name: 'Command Export'
       },
       {
-        key: 'songrequests',
-        path: '/songrequests',
-        icon: 'library_music',
-        name: 'Songrequests'
-      },
-      {
        key: 'songsync',
        path: '/songsync',
        icon: 'library_music',

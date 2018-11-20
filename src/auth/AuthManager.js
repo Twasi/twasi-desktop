@@ -1,7 +1,7 @@
 import jwtdecode from 'jwt-decode';
 
 if (!window.signin) {
-    console.log('Waiting for JWT...');
+    //console.log('Waiting for JWT...');
     window.signin = jwt => {
         manager.authenticate(jwt)
     }
@@ -32,3 +32,5 @@ class AuthManager {
 const manager = new AuthManager();
 
 export default manager;
+
+export { AuthManager };
