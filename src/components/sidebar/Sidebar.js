@@ -18,7 +18,7 @@ class Sidebar extends Component {
     this.items = [
       {
         key: 'overview',
-        path: '/overview',
+        path: '/',
         icon: 'home',
         name: 'Overview'
       },
@@ -29,10 +29,10 @@ class Sidebar extends Component {
         name: 'Command Export'
       },
       {
-        key: 'songrequests',
-        path: '/songrequests',
-        icon: 'library_music',
-        name: 'Songrequests'
+       key: 'songsync',
+       path: '/songsync',
+       icon: 'library_music',
+       name: 'SongSync'
       },
       {
         key: 'logout',
