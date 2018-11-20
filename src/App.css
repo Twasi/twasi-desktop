@@ -26,6 +26,15 @@
   color: white;
   margin: auto;
   width: calc(70% - 270px);
+  height: 1000px;
+}
+
+.exportButton {
+  border: none;
+  background-color: #00bfc0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 2px;
 }
 
 @keyframes App-logo-spin {

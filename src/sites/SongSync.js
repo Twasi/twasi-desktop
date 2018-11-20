@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Switch from '@material-ui/core/Switch';
-import APIConnector from "../api/APIConnector";
 
 class SongSync extends Component {
 

@@ -46,7 +46,10 @@ class CommandExport extends Component {
 
     render() {
         return (
-            <button onClick={this.exportCommands}>Export</button>
+            <div>
+                <p>Hey, here you're able to export your custom commands. Have fun!</p>
+                <button className="exportButton" onClick={this.exportCommands}>Export</button>
+            </div>
         );
     }
 }

@@ -16,6 +16,7 @@
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test-noni": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-dev": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
@@ -26,6 +27,7 @@
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
+    "jest": "^23.6.0",
     "material-ui": "^0.20.2",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1"

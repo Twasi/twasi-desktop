@@ -9,7 +9,6 @@ import Error404 from './sites/Error404';
 import CommandExport from './sites/CommandExport';
 
 import './App.css';
-import Songrequests from "./sites/Songrequests";
 import SongSync from "./sites/SongSync";
 
 class App extends Component {
@@ -24,7 +23,6 @@ class App extends Component {
                             <Route exact path='/' component={Overview}/>
                             <Route exact path='/logout' component={Logout}/>
                             <Route exact path='/export' component={CommandExport}/>
-                            <Route exact path='/songrequest' component={Songrequests}/>
                             <Route exact path='/songsync' component={SongSync}/>
                             <Route path='/' component={Error404}/>
                         </Switch>

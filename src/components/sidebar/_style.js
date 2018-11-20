@@ -1,7 +1,7 @@
 export const getMenuStyle = () => ({
     display: 'block',
-    marginLeft: '5%',
-    marginTop: '-150px',
+    marginLeft: 'calc(15% - 100px)',
+    marginTop: '-95px ',
     width: '200px',
     boxShadow: 'none',
     position: 'fixed'
