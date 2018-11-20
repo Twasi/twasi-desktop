@@ -32,10 +32,10 @@ class CommandExport extends Component {
 
                         fs.writeFile(fileName, JSON.stringify(result), (err) => {
                             if (err) {
-                                alert("An error ocurred creating the file " + err.message)
+                                alert("An error occurred creating the file " + err.message)
                             }
 
-                            alert("The file has been succesfully exported");
+                            alert("The file has been successfully exported");
 
                         });
                     });
