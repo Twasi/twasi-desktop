@@ -11,6 +11,8 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
+let authWindow;
+
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({width: 800, height: 600});
@@ -62,7 +64,7 @@ app.on('activate', function () {
 
 // Auth
 app.on('ready', () => {
-    const authWindow = new BrowserWindow({
+    authWindow = new BrowserWindow({
         width: 800,
         height: 600,
         alwaysOnTop: true,
