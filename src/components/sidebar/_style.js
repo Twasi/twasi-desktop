@@ -1,8 +1,10 @@
 export const getMenuStyle = () => ({
     display: 'block',
-    margin: '120px 0 0 5%',
+    marginLeft: '5%',
+    marginTop: '-150px',
     width: '200px',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    position: 'fixed'
 });
   
 export const getMenuItemStyle = () => ({
