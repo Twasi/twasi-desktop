@@ -46,7 +46,10 @@ class CommandExport extends Component {
 
     render() {
         return (
-            <button onClick={this.exportCommands}>Export</button>
+            <div>
+                <p>Hey, here is the current song export. Have Fun!</p>
+                <button className="exportButton" onClick={this.exportCommands}>Export</button>
+            </div>
         );
     }
 }
