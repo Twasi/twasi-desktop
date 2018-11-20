@@ -1,0 +1,8 @@
+.tileValue {
+    position: absolute;
+    right: 15px;
+}
+
+.tileList {
+    padding: 0 !important;
+}
