@@ -9,13 +9,10 @@ const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
-
-let authWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    app.mainWindow = new BrowserWindow({width: 800, height: 600});
 
     // and load the index.html of the app.
     const startUrl = process.env.ELECTRON_START_URL || url.format({
@@ -23,17 +20,17 @@ function createWindow() {
             protocol: 'file:',
             slashes: true
         });
-    mainWindow.loadURL(startUrl);
+    app.mainWindow.loadURL(startUrl);
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
-    mainWindow.on('closed', function () {
+    app.mainWindow.on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        mainWindow = null
+        app.mainWindow = null
     })
 }
 
@@ -54,9 +51,30 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (mainWindow === null) {
+    if (app.mainWindow === null) {
         createWindow()
     }
+});
+
+app.on('logout', function() {
+    console.log('Logging out...');
+
+    /* app.authWindow.webContents.session.clearAuthCache();
+    app.authWindow.webContents.session.clearStorageData();
+    app.authWindow.webContents.session.clearAuthCache();
+    app.authWindow.webContents.clearHistory(); */
+
+    // app.authWindow.webContents.session.clearAuthCache();
+    app.mainWindow.webContents.session.clearCache(() => {});
+    app.mainWindow.webContents.session.clearStorageData();
+    app.mainWindow.webContents.clearHistory();
+
+    app.emit('ready');
+
+    app.mainWindow.close();
+
+    // app.mainWindow.close();
+
 });
 
 // In this file you can include the rest of your app's specific main process
@@ -64,7 +82,7 @@ app.on('activate', function () {
 
 // Auth
 app.on('ready', () => {
-    authWindow = new BrowserWindow({
+    app.authWindow = new BrowserWindow({
         width: 800,
         height: 600,
         alwaysOnTop: true,
@@ -74,22 +92,22 @@ app.on('ready', () => {
         }
     });
 
-    authWindow.setTitle("Signing in with Twasi.net...");
+    app.authWindow.setTitle("Signing in with Twasi.net...");
 
-    authWindow.webContents.on('did-navigate', function (event, newUrl) {
+    app.authWindow.webContents.on('did-navigate', function (event, newUrl) {
         const beginning = "https://panel-beta.twasi.net/?jwt=";
 
         if (newUrl.startsWith(beginning)) {
             const jwt = newUrl.replace(beginning, '');
             createWindow();
 
-            mainWindow.webContents.on('did-finish-load', function() {
+            app.mainWindow.webContents.on('did-finish-load', function() {
                 console.log('loaded, app ready');
-                mainWindow.webContents.executeJavaScript("window.signin('" + jwt + "')");
+                app.mainWindow.webContents.executeJavaScript("window.signin('" + jwt + "')");
             });
 
-            authWindow.close();
+            app.authWindow.close();
         }
     });
-    authWindow.loadURL('https://api-beta.twasi.net/auth?environment=https://panel-beta.twasi.net');
+    app.authWindow.loadURL('https://api-beta.twasi.net/auth?environment=https://panel-beta.twasi.net');
 });
