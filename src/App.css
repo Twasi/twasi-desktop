@@ -38,6 +38,14 @@
   border-radius: 2px;
 }
 
+.syncButton {
+  border: none;
+  background-color: #00bfc0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
 .siteTitle {
   font-size: 1.2em;
 }
@@ -46,8 +54,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-.Switchsongsync {
-  color: rgb(0, 174, 174);
 }
