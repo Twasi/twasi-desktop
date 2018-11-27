@@ -1,3 +1,9 @@
+/**
+ * The SongSync component manages the view and logic of the SongSync functionality.
+ *
+ * Lars Bärtschi, 27.11.2018
+ */
+
 import React, {Component} from 'react';
 import APIConnector from '../api/APIConnector';
 import Switch from '@material-ui/core/Switch';

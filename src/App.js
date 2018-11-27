@@ -1,3 +1,10 @@
+/**
+ * App is the main component of the application.
+ * It handels the routing and decides which page to render where.
+ *
+ * Lars Bärtschi, 27.11.2018
+ */
+
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
