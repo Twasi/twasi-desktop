@@ -28,7 +28,12 @@ class InfoTiles extends Component {
     }
 
     getInfo(key) {
-        return key;
+        APIConnector.ready(() => {
+            APIConnector.doPanelRequest("commands{id, name, content}", "commands")
+                .then(result => {
+                    console.log(result)
+                })
+        });
     }
     
     render() {
