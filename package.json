@@ -21,12 +21,14 @@
     "electron": "electron .",
     "electron-dev": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
     "dev": "concurrently --kill-others \"npm start\" \"npm run electron-dev\"",
-    "electron-build": "npm run build && npm run electron"
+    "electron-build": "npm run build && npm run electron",
+    "package": "electron-packager . twasi-desktop"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
+    "electron-packager": "^12.2.0",
     "jest": "^23.6.0",
     "material-ui": "^0.20.2",
     "react-redux": "^5.1.0",

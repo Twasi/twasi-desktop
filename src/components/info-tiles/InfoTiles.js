@@ -15,37 +15,72 @@ import { getListStyle, getItemStyle, getTitleStyle } from './_style';
 import './_style.css';
 
 class InfoTiles extends Component {
-    
     constructor(props) {
         super(props);
-    
-        this.items = [
-          {
-            title: 'Stream duration',
-            query: 'user {stream duration}',
-            value: '7 Minutes'
-          },
-          {
-            title: 'Current viewers',
-            query: 'user {viewers}',
-            value: '7 Viewers'
-          }
-        ];
+        this.state = {
+            items : [
+                {
+                    title: 'Requested Song',
+                    query: 'current/request/song/name',
+                    target: 'songrequest',
+                    id: 'overviewSongName',
+                    value: ""
+                },
+                {
+                    title: 'Song Status',
+                    query: 'current/status',
+                    target: 'songrequest',
+                    id: 'overviewSongStatus',
+                    value: ""
+                }
+          ]
+        }
     }
 
-    getInfo(key) {
-        return key;
+    componentDidMount() {
+        this.state.items.forEach(e => {
+            this.getInfo(e)
+        });
+    }
+
+    getInfo(item) {
+        var query = "";
+        var queryEnd = "";
+        var parts = item["query"].split("/");
+
+        parts.forEach(part => {
+            queryEnd += "}";
+            query += part + "{";
+        });
+
+        query = query.slice(0, -1) + queryEnd.slice(0, -1);
+
+        APIConnector.ready(() => {
+            APIConnector.doPanelRequest(query, item.target).then(result => {
+                var value = result
+                parts.forEach(part => {
+                    if(!value[part])
+                        return
+                    value = value[part]
+                });
+                const newItem = {...item, value}
+                
+                this.setState({items:[...this.state.items.filter(i => i.id !== item.id), newItem]})
+            });
+        });
+        
     }
     
     render() {
         const renderItems = () =>
-            this.items.map(item => (
+            this.state.items.map(item => (
                 <ListItem
+                key={item.id}
                 style={getItemStyle()}
                 innerDivStyle={{ padding: '0px 16px 0px 52px' }}
                 >
                 { item.title }:
-                <i className="tileValue">{this.getInfo(item.value)}</i>
+                <i className="tileValue">{ item.value }</i>
                 </ListItem>
             ));
 
