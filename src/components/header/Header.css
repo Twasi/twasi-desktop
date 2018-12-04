@@ -3,3 +3,11 @@
     border-top: #00aeae 5px solid;
     height: 150px;
 }
+
+#username {
+    color: white;
+    position: fixed;
+    top: 5px;
+    font-size: 1.2em;
+    margin-left: calc(15% - 95px);
+}

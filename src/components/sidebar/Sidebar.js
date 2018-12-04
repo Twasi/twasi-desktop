@@ -33,7 +33,7 @@ class Sidebar extends Component {
         key: 'commandexport',
         path: '/export',
         icon: 'code',
-        name: 'Command Export'
+        name: 'Befehle'
       },
       {
        key: 'songsync',
@@ -62,7 +62,6 @@ class Sidebar extends Component {
 
   handleClick(event, value) {
     const { history } = this.props;
-
     const { path } = find(newItem => newItem.key === value, this.items);
     history.push(path);
     this.setState({});

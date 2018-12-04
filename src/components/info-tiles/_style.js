@@ -21,5 +21,4 @@ export const getItemStyle = () => ({
     Height: 48,
     position: 'relative',
     textAlign: 'center',
-    //borderTop: '0px solid #00aeae'
 });

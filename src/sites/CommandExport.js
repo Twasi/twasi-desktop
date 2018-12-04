@@ -13,7 +13,6 @@ class CommandExport extends Component {
     constructor(props) {
         super(props);
         this.remote = window.require("electron").remote;
-
     }
 
     exportCommands() {
