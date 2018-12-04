@@ -1,6 +1,6 @@
 export const getListStyle = () => ({
     display: 'block',
-    width: '300px',
+    width: '400px',
     boxShadow: 'none'
 });
 
@@ -13,14 +13,13 @@ export const getTitleStyle = () => ({
 export const getItemStyle = () => ({
     backgroundColor: '#1b292c',
     fontSize: 12,
-    //marginTop: 10,
     fontWeight: '700',
-    lineHeight: '120px',
+    lineHeight: '48px',
     color: '#fff',
-    marginLeft: 0,
-    padding: '10px 10px 10px 10px',
-    minHeight: 48,
+    margin_Left: 0,
+    padding: '0px 16px 0px 16px',
+    Height: 48,
     position: 'relative',
-     textAlign: 'center',
+    textAlign: 'center',
     //borderTop: '0px solid #00aeae'
 });
