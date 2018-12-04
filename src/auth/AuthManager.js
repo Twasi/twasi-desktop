@@ -17,21 +17,36 @@ if (!window.signin) {
 
 class AuthManager {
     constructor() {
-        this.isAuthenticated = false;
+        this.isAuthenticatedValue = false;
         this.eventHandlers = [];
     }
 
+    /**
+     * Returns if the user is authenticated
+     * @returns {boolean}
+     */
     isAuthenticated() {
-        return this.isAuthenticated;
+        return this.isAuthenticatedValue;
     }
 
+    /**
+     * Authenticate a user using the provided JWT.
+     * @param jwt
+     */
     authenticate(jwt) {
         this.jwt = jwt;
         this.userByJwt = jwtdecode(jwt);
 
+        this.isAuthenticatedValue = true;
+
         this.eventHandlers.forEach(handler => handler(jwt));
     }
 
+    /**
+     * Registers an event handler that gets called as soon as authentication
+     * has completed.
+     * @param eventHandler
+     */
     registerOnAuthenticate(eventHandler) {
         this.eventHandlers.push(eventHandler);
     }
