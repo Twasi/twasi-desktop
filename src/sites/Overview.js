@@ -1,3 +1,10 @@
+/**
+ * Overview is the page that is displayed under the overview entry in the sidebar.
+ * It returns the InfoTiles, which can show general stats.
+ *
+ * Marco Steiner, 27.11.2018
+ */
+
 import React, { Component } from 'react';
 import InfoTiles from '../components/info-tiles/InfoTiles';
 

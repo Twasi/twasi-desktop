@@ -1,3 +1,9 @@
+/**
+ * APIConnector holds the connection to the GraphQL backend.
+ *
+ * Lars Bärtschi, 27.11.2018
+ */
+
 import AuthManager from '../auth/AuthManager';
 import fetch from './fetch';
 

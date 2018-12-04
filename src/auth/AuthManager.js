@@ -1,3 +1,11 @@
+/**
+ * AuthManager holds the current state and information of the authentication.
+ * It allows for other components of the application to register and wait for the
+ * event of a successful authentication
+ *
+ * Lars Bärtschi, 27.11.2018
+ */
+
 import jwtdecode from 'jwt-decode';
 
 if (!window.signin) {

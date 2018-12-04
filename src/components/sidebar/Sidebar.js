@@ -1,3 +1,10 @@
+/**
+ * The sidebar component is the visible navigation on the left of the content.
+ * Pages can be added with ease.
+ *
+ * Marco Steiner, 27.11.2018
+ */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';

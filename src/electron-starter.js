@@ -1,3 +1,12 @@
+/**
+ * Electron-Starter is the entry point of the application.
+ *
+ * It handels several events, like state changes, initiates authentication and also handels
+ * connections to native API's
+ *
+ * Lars Bärtschi, 27.11.2018
+ */
+
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;
@@ -6,9 +15,6 @@ const BrowserWindow = electron.BrowserWindow;
 
 const path = require('path');
 const url = require('url');
-
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 
 function createWindow() {
     // Create the browser window.
@@ -54,13 +60,6 @@ app.on('activate', function () {
 
 app.on('logout', function() {
     console.log('Logging out...');
-
-    /* app.authWindow.webContents.session.clearAuthCache();
-    app.authWindow.webContents.session.clearStorageData();
-    app.authWindow.webContents.session.clearAuthCache();
-    app.authWindow.webContents.clearHistory(); */
-
-    // app.authWindow.webContents.session.clearAuthCache();
     app.mainWindow.webContents.session.clearCache(() => {});
     app.mainWindow.webContents.session.clearStorageData();
     app.mainWindow.webContents.clearHistory();
@@ -68,13 +67,7 @@ app.on('logout', function() {
     app.emit('ready');
 
     app.mainWindow.close();
-
-    // app.mainWindow.close();
-
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
 
 // Auth
 app.on('ready', () => {

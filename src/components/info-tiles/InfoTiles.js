@@ -1,3 +1,9 @@
+/**
+ * InfoTile holds the overview of the page: It is highly customizable.
+ *
+ * Marco Steiner, 27.11.2018
+ */
+
 import React, { Component } from 'react';
 import APIConnector from '../../api/APIConnector';
 import Paper from '@material-ui/core/Paper';

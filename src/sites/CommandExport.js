@@ -1,3 +1,10 @@
+/**
+ * CommandExport component holds the page content and logic of the
+ * command export page.
+ *
+ * Yvo Hofer, 27.11.2018
+ */
+
 import React, {Component} from 'react';
 import APIConnector from '../api/APIConnector';
 
